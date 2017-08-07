@@ -10,11 +10,14 @@
 
 	<link href="https://fonts.googleapis.com/css?family=Kanit:300,400,700" rel="stylesheet">
 	<link rel="stylesheet" href="./assets/css/main.css">
+	<link rel="icon" type="image/png" href="./favicon.png" />
 </head>
 
 <body>
 	<div class="topbar"></div>
 	<header>
+		<img src="./assets/images/logo_derose.png" alt="" class="logo-derose">
+
 		<img src="./assets/images/logo.png" alt="" class="logo">
 	</header>
 
@@ -71,7 +74,39 @@
 	<footer>
 		<div class="rights">© 2017 +Amigos</div>
 	</footer>
+
+	<div class="confirm">
+		<h1 class="t-gradient">Invitación sucesiva</h1>
+		<p>Su invitación fue enviada con éxito. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+
+		<button class="bt-default close">Ok</button>
+	</div>
+	<div class="over"></div>
 </body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script>
+
+$(document).on('ready', function() {
+
+	//confirm msg
+	$('form input[type="submit"]').on('click', function(e) {
+		e.preventDefault();
+
+		
+		$('.over').fadeIn(300, function() {
+			$('.confirm').fadeIn(300);
+		});
+
+		$('.close').on('click', function() {
+			$('.confirm').fadeOut(300);
+			$('.over').fadeOut(300);
+		})
+	});
+
+});
+
+</script>
 </html>
 
 
